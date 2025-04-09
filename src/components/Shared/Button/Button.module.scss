@@ -1,0 +1,11 @@
+.base {
+  @apply px-4 py-2 rounded font-semibold transition;
+}
+
+.primary {
+  @apply bg-brand text-white hover:bg-brand/90 w-full;
+}
+
+.secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}

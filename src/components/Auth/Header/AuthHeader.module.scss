@@ -1,0 +1,9 @@
+.logo {
+  @apply mx-auto mb-6 h-8;
+}
+.title {
+  @apply text-lg font-semibold text-center text-gray-800 mb-1;
+}
+.subtitle {
+  @apply text-base text-center text-gray-500 mb-6;
+}

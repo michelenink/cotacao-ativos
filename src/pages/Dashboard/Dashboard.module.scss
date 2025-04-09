@@ -1,0 +1,36 @@
+.container {
+  @apply p-6 max-w-7xl mx-auto;
+}
+
+.header {
+  @apply flex justify-between items-center mb-6;
+}
+
+.title {
+  @apply text-2xl font-bold;
+}
+
+.quoteGrid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+}
+
+.card {
+  @apply bg-white rounded shadow p-4 border border-gray-200
+         hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer;
+}
+
+.cardTitle {
+  @apply font-semibold text-lg;
+}
+
+.pricePositive {
+  @apply text-green-600 font-bold;
+}
+
+.priceNegative {
+  @apply text-red-600 font-bold;
+}
+
+.chartWrapper {
+  @apply mt-8;
+}
