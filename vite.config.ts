@@ -8,6 +8,13 @@ export default defineConfig({
   plugins: [react(), eslintPlugin()],
   server: {
     port: 3001,
+    proxy: {
+      "/api": {
+        target: "https://api.hgbrasil.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
   resolve: {
     alias: {
