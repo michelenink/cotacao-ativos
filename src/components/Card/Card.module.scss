@@ -1,0 +1,15 @@
+.card {
+  @apply p-6 border bg-white border-gray-300 rounded-lg mb-4 w-full hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer;
+}
+
+.cardTitle {
+  @apply text-lg font-bold mb-3;
+}
+
+.pricePositive {
+  @apply text-green-600;
+}
+
+.priceNegative {
+  @apply text-red-600;
+}

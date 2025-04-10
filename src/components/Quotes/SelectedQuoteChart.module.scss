@@ -1,0 +1,19 @@
+.chartWrapper {
+  @apply bg-white p-6 rounded-lg shadow-md;
+}
+
+.chartTitle {
+  @apply text-lg font-semibold mb-3;
+}
+
+.chartCanvasWrapper {
+  @apply flex justify-center items-center w-full;
+
+  canvas {
+    @apply w-full h-64;
+  }
+}
+
+.noData {
+  @apply text-center text-gray-500;
+}

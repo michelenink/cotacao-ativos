@@ -10,6 +10,12 @@ import {
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { useQuoteStore } from "~/store/quotes";
+import styles from "./SelectedQuoteChart.module.scss";
+
+interface ChartData {
+  timestamps: string[];
+  prices: number[];
+}
 
 ChartJS.register(
   CategoryScale,
@@ -20,45 +26,60 @@ ChartJS.register(
   Legend
 );
 
-const SelectedQuoteChart = () => {
+const SelectedQuoteChart = ({
+  selectedQuote,
+}: {
+  selectedQuote: string | null;
+}) => {
   const history = useQuoteStore((state) => state.history);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [data, setData] = useState<ChartData | null>(null);
 
   useEffect(() => {
-    const handleQuoteSelected = (event: Event) => {
-      const customEvent = event as CustomEvent<string>;
-      setSelected(customEvent.detail);
-    };
+    if (selectedQuote && history[selectedQuote]) {
+      setData(history[selectedQuote]);
+    }
+  }, [selectedQuote, history]);
 
-    window.addEventListener("quoteSelected", handleQuoteSelected);
+  useEffect(() => {
     return () => {
-      window.removeEventListener("quoteSelected", handleQuoteSelected);
+      const chartCanvas = document.getElementById(
+        "chartCanvas"
+      ) as HTMLCanvasElement;
+      if (chartCanvas) {
+        const chartInstance = ChartJS.getChart(chartCanvas);
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+      }
     };
-  }, []);
+  }, [selectedQuote]);
 
-  if (!selected || !history[selected])
+  if (!data)
     return (
-      <p className='text-center'>Selecione uma cotação para ver o gráfico</p>
+      <p className={styles.noData}>Selecione uma cotação para ver o gráfico</p>
     );
 
-  const data = history[selected];
   return (
-    <div className='bg-white p-4 rounded shadow-md'>
-      <h2 className='text-lg font-semibold mb-2'>Histórico: {selected}</h2>
-      <Line
-        data={{
-          labels: data.timestamps,
-          datasets: [
-            {
-              label: "Preço de compra (R$)",
-              data: data.prices,
-              fill: false,
-              borderColor: "rgb(75, 192, 192)",
-              tension: 0.1,
-            },
-          ],
-        }}
-      />
+    <div className={styles.chartWrapper}>
+      <h2 className={styles.chartTitle}>Histórico: {selectedQuote}</h2>
+      <div className={styles.chartCanvasWrapper}>
+        <Line
+          id='chartCanvas'
+          key={selectedQuote}
+          data={{
+            labels: data.timestamps,
+            datasets: [
+              {
+                label: "Preço de compra (R$)",
+                data: data.prices,
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                tension: 0.1,
+              },
+            ],
+          }}
+        />
+      </div>
     </div>
   );
 };

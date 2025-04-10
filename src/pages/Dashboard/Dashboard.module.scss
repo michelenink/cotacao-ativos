@@ -14,26 +14,6 @@
   @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
 }
 
-.card {
-  @apply bg-white rounded shadow p-4 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer;
-}
-
-.cardTitle {
-  @apply font-semibold text-lg;
-}
-
-.pricePositive {
-  @apply text-green-600 font-bold;
-}
-
-.priceNegative {
-  @apply text-red-600 font-bold;
-}
-
 .chartWrapper {
   @apply mt-8;
-}
-
-.ibovCard {
-  @apply col-span-full;
 }
