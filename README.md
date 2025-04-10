@@ -6,12 +6,12 @@ As cotações são obtidas por meio da [API de finanças da HG Brasil](https://h
 
 ## Tecnologias Usadas
 
-![React](https://img.shields.io/badge/React-18.2.0-blue.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
-![Vite](https://img.shields.io/badge/Vite-4.0-purple.svg)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC.svg)
-![Jest](https://img.shields.io/badge/Jest-29.0.0-brightgreen.svg)
-![ESLint](https://img.shields.io/badge/ESLint-8.0.0-purple.svg)
+![React](https://img.shields.io/badge/React-19.1.0-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-blue.svg)
+![Vite](https://img.shields.io/badge/Vite-6.2.0-purple.svg)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-38B2AC.svg)
+![Jest](https://img.shields.io/badge/Jest-29.7.0-brightgreen.svg)
+![ESLint](https://img.shields.io/badge/ESLint-9.21.0-purple.svg)
 
 Aqui estão as principais tecnologias utilizadas neste projeto:
 
