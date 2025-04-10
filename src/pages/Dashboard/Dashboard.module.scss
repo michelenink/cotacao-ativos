@@ -15,8 +15,7 @@
 }
 
 .card {
-  @apply bg-white rounded shadow p-4 border border-gray-200
-         hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer;
+  @apply bg-white rounded shadow p-4 border border-gray-200 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer;
 }
 
 .cardTitle {
@@ -33,4 +32,8 @@
 
 .chartWrapper {
   @apply mt-8;
+}
+
+.ibovCard {
+  @apply col-span-full;
 }
