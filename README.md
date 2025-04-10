@@ -1,54 +1,84 @@
-# React + TypeScript + Vite
+# Desafio Técnico: Cotação de Ativos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Olá! Bem-vindo ao meu desafio técnico de **Cotação de Ativos**. Este projeto foi desenvolvido com **React**, **TypeScript**, **Vite**. O objetivo é fornecer uma aplicação simples para exibir cotações de moedas e ações com atualizações em tempo real.
 
-Currently, two official plugins are available:
+As cotações são obtidas por meio da [API de finanças da HG Brasil](https://hgbrasil.com/finance), que fornece dados atualizados sobre moedas, ações, índices e criptomoedas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Usadas
 
-## Expanding the ESLint configuration
+![React](https://img.shields.io/badge/React-18.2.0-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
+![Vite](https://img.shields.io/badge/Vite-4.0-purple.svg)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC.svg)
+![Jest](https://img.shields.io/badge/Jest-29.0.0-brightgreen.svg)
+![ESLint](https://img.shields.io/badge/ESLint-8.0.0-purple.svg)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Aqui estão as principais tecnologias utilizadas neste projeto:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
+- **Vite**: Ferramenta moderna de build para front-end.
+- **Tailwind CSS**: Utilitário CSS para estilização rápida e responsiva.
+- **Jest**: Framework de testes para aplicações JavaScript/TypeScript.
+- **ESLint**: Ferramenta de análise estática de código para manter a padronização e evitar erros.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Funcionalidades
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este projeto possui as seguintes funcionalidades:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Página de Login:** O usuário pode fazer login com credenciais armazenadas no localStorage.
+- **Página de Dashboard:** Exibe cotações de ativos financeiros (moedas e ações) com atualizações em tempo real.
+- **Gráficos:** Exibe gráficos das variações de preços dos ativos selecionados.
+- **Componentes reutilizáveis:** Botões e inputs estilizados para manter a consistência no design.
+
+## Requisitos
+
+Antes de rodar o projeto, você precisará ter os seguintes pré-requisitos instalados:
+
+- **Node.js** (versão 16 ou superior)
+- **npm** (gerenciador de pacotes)
+
+### Iniciando o Projeto:
+
+Antes de rodar o projeto, você precisa configurar a chave de acesso à API da HG Brasil. Para isso:
+
+1. Acesse o arquivo `.env` na raiz do projeto.
+2. Adicione sua chave da API no seguinte formato:
+
+````bash
+VITE_HG_API_KEY=sua_chave_aqui
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/michelenink/desafio-franq-finance.git
+````
+
+2. Instale as dependências necessárias:
+
+   ```bash
+   npm install
+   ```
+
+3. Agora, para iniciar o servidor de desenvolvimento, basta rodar:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse a aplicação no navegador:
+   ```bash
+   http://localhost:3001
+   ```
+
+### Executar Testes
+
+Se você quiser rodar os testes unitários (que são feitos com Jest), use o comando abaixo:
+
+1. Para rodar os testes, utilize o comando:
+   ```bash
+   npm test
+   ```
+
+[Visite meu GitHub](https://github.com/michelenink)<br>
+[Visite meu linkedin](https://www.linkedin.com/in/michelenink/)
